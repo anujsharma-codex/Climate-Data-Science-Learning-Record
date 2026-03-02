@@ -1,44 +1,42 @@
-## Overview
+# Python Learning Journey
+
+This repository documents my progression from Python fundamentals to domain-specific projects in **climate physical risk intelligence** — my target field at the intersection of atmospheric physics, data science, and risk assessment.
+
+Every folder here represents a stage: first learning the building blocks, then immediately applying them to a real problem.
+
 ---
-This repository contains structured Python projects built to strengthen core programming fundamentals and problem-solving skills.
-The focus is on writing clean, modular, and logical code without relying heavily on external libraries.
-These projects form the foundation for future work in data science and software development.
 
-## fundamentals/
+## Structure
 
-Contains mini projects focused on practicing specific Python concepts such as:
-- String manipulation
-- List operations
-- Duplicate handling
-- Menu-driven program structure
-- Function modularity
+### `01_fundamentals/`
+Practice exercises written while learning core Python concepts — strings, lists, dictionaries, functions, error handling, and OOP. These aren't polished projects; they're the working notes from building a foundation.
 
-## core_projects/
+### `02_solar_calculator/`
+The first applied project. A CLI tool that calculates solar panel installation viability for residential and commercial properties across 9 Indian cities — built using **pure Python and OOP, no external libraries**.
 
-Contains larger structured projects that integrate multiple programming concepts into more complete systems.
+Covers system sizing, energy generation estimates, government subsidy calculations, GST and accelerated depreciation for commercial users, payback period, and LCOE.
 
-## Skills Practiced
+→ [See the full project README](02_solar_calculator/README.md)
 
-- Function design and modular programming
-- Data cleaning logic
-- String and list manipulation
-- Control flow and loops
-- Manual duplicate elimination
-- Basic preprocessing techniques
+---
 
-## Purpose
+## Where This Is Going
 
-The goal of this repository is to build strong Python fundamentals before progressing to:
-- NumPy & Pandas
-- Data analysis projects
-- Machine learning workflows
-- Real-world dataset exploration
+This repo will grow as I move through my learning roadmap:
 
-## Roadmap
+| Phase | Focus | Status |
+|---|---|---|
+| Python + OOP | Solar Potential Calculator | ✅ Complete |
+| Libraries (Pandas, NumPy, Xarray) | Extreme Weather Event Analyzer | 🔄 Up next |
+| SQL + PostGIS | Hydrometeorological Station Database | ⏳ Planned |
+| Statistics & Math | Climate Change Signal Detector | ⏳ Planned |
+| Machine Learning | Dunkelflaute Predictor | ⏳ Planned |
+| MLOps + Production | End-to-End Climate Risk Platform | ⏳ Planned |
 
-Upcoming additions:
-- File handling projects
-- CSV data preprocessing
-- Exception handling systems
-- Unit testing integration
-- Data analysis using Pandas
+The goal is to be able to build systems that translate atmospheric physics into actionable risk intelligence — for energy grids, insurance portfolios, and climate adaptation planning.
+
+---
+
+## About Me
+
+I'm learning data science with a specific target domain: climate physical risk. Rather than generic ML projects, every project here is chosen to build domain-relevant skills and signal readiness for roles like Climate Data Scientist, Renewable Energy Forecaster, or Catastrophe Modeler.
