@@ -1,4 +1,80 @@
 # all constraints here
+import numpy as np
+RESIDENTIAL_CONFIG=np.array(
+    [58000,25,0.01,0.75],
+    dtype=[("market_rate_per_kW",int),
+           ("system_lifetime",int),
+           ("annual_maintenance_ratio",float),
+           ("performance_ratio",float)])
+
+
+COMMERCIAL_CONFIG=np.array(
+    [6,48000,0.089,0.40,0.02,0.25],
+    dtype=[
+        ("working_days_per_week",int),
+        ("market_rate_per_kW",float),
+        ("gst_composite_rate",float),
+        ("accelerated_depreciation_rate",float),
+        ("annual_maintenance_ratio",float),
+        ("tax_bracket",float)
+        ])
+
+PANEL=np.array(
+    [25,0.75],
+    dtype= [("life",int),
+            ("performance_factor",float)
+            ])
+
+CITY = np.array([
+    ("Ahmedabad", 23.0, 72.65, 6.5),
+    ("Dehradun", 30.2, 78.06, 6.0),
+    ("Delhi", 28.6, 77.52, 6.5),
+    ("Kolkata", 22.5, 88.38, 9.2),
+    ("Hyderabad", 17.4, 78.46, 6.0),
+    ("Chennai", 13.0, 80.3, 6.0),
+    ("Mumbai", 18.9, 72.85, 9.9),
+    ("Indore", 22.7, 75.85, 6.8),
+    ("Jaipur", 26.9, 75.85, 6.5)
+], dtype=[
+    ("city_name", "U20"),      # Unicode string, max 20 chars
+    ("latitude", "f8"),        # 64-bit float
+    ("longitude", "f8"),       # 64-bit float  
+    ("peak_sun_hours", "f8")   # 64-bit float
+])
+
+
+STATE = np.array([
+    ("Gujarat", 2.25, 4.50),
+    ("Uttarakhand", 2.00, 4.80),
+    ("Delhi", 4.30, 5.50),
+    ("West Bengal", 2.00, 6.00),
+    ("Telangana", 2.00, 8.50),
+    ("Tamil Nadu", 2.00, 7.50),
+    ("Maharashtra", 2.00, 12.00),
+    ("Madhya Pradesh", 0.50, 6.50),
+    ("Rajasthan", 2.00, 7.00)
+], dtype=[
+    ("state_name", "U20"),
+    ("export_rate", "f8"),
+    ("tariff", "f8")
+])
+
+SUBSIDIES=np.array([
+    [35000, 67500, 88000, 90000, 93000],  # Ahmedabad
+    [53000, 100000, 132000, 132000, 132000],  # Dehradun
+    [32000, 64000, 84000, 86000, 88000],  # Delhi
+    [30000, 60000, 78000, 78000, 78000],  # Kolkata
+    [30000, 60000, 78000, 78000, 78000],  # Hyderabad
+    [50000, 80000, 98000, 98000, 98000],  # Chennai
+    [45000, 60000, 78000, 78000, 78000],  # Mumbai
+    [44800, 89600, 122400, 133720, 141650],  # Indore
+    [30000, 77000, 95000, 95000, 95000]   # Jaipur
+    ])
+
+KW_BRACKETS = np.array(["1kW", "2kW", "3kW", "4kW", "5kW"])
+
+'''
+# v1 without numpy configs
 
 RESIDENTIAL_CONFIG = {
 "market_rate_per_kW": 58000,
@@ -84,4 +160,4 @@ STATE_TARIFF={'Gujarat':4.50,
 'Madhya Pradesh':6.50,
 'Rajasthan':7.00
 }
-
+'''

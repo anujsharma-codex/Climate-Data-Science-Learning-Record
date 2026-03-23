@@ -1,6 +1,7 @@
 from Solar.solarcalculator import SolarSystem
-from config import CITY_LATITUDE,CITY_LONGITUDE,CITY_PEAK_SUN_HOURS,CENTRAL_STATE_MAX_COMBINED_SUBSIDY,STATE_EXPORT_RATE,STATE_TARIFF
+from config import CITY,SUBSIDIES,STATE
 from Solar.utils import Utils 
+import numpy as np
 class Location:
     def __init__(self,city,state,solar_system_obj,utils_obj):
         self.u_obj=utils_obj
@@ -9,21 +10,24 @@ class Location:
         self.state=self.u_obj.get_normalized_string(state)  
     
     def get_city_latitude(self):
-        return CITY_LATITUDE.get(self.city)
+        return CITY[np.where(CITY["city_name"]==self.city)]["latitude"]
+        #.get(self.city)
     
     def get_city_longitude(self):
-        return CITY_LONGITUDE.get(self.city)
+        return CITY[np.where(CITY["city_name"]==self.city)]['longitude']
     
     def get_city_max_peak_sun_hours(self):
-        return CITY_PEAK_SUN_HOURS.get(self.city)
+        return CITY[np.where(CITY["city_name"]==self.city)]["peak_sun_hours"]
     
     def get_combined_subsidy(self):
-        city_subsidies = CENTRAL_STATE_MAX_COMBINED_SUBSIDY.get(self.city, {})
-        wattage_key = str(self.ss_obj.panel_wattage) + 'kW'
-        return city_subsidies.get(wattage_key, 0)
+        row_indice=np.where(CITY["city_name"]==self.city)
+        wattage_key = self.ss_obj.panel_wattage   # int number 1,2,3,4,5...
+        col_indice=np.where(KW_BRACKETS==str(wattage_key)+"kW")
+        city_subsidies = SUBSIDIES[row_indice,col_indice]
+        return city_subsidies
     
     def get_state_export_rate(self):
-        return STATE_EXPORT_RATE.get(self.state)
+        return STATE[np.where(STATE["state_name"]==self.state)]["export_rate"]
     
     def get_state_tariff(self):
-        return STATE_TARIFF.get(self.state)
+        return STATE[np.where(STATE["state_name"]==self.state)]["tariff"]

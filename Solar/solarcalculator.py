@@ -9,7 +9,7 @@ class SolarSystem:
         self.width=width        #float width of one panel
         self.roof_length=roof_length
         self.roof_width=roof_width 
-        self.performance_factor = PANEL.get("performance_factor")   
+        self.performance_factor = PANEL["performance_factor"]   
 
     def calculate_total_panel_area(self):
         return self.length*self.width*self.number_of_panels
