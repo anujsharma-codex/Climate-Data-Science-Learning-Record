@@ -1,0 +1,169 @@
+The Complete 20% NumPy for Climate Data Analysts
+
+TIER 1: Non-Negotiable (Master These)
+1. Broadcasting
+
+Basic rules (align trailing dimensions)
+Adding a time series to every grid point
+Applying latitude weights to global arrays
+Combining different shaped arrays (time, lat, lon)
+
+2. Boolean Masking
+Extreme event detection (T > threshold)
+Quality control flags
+Seasonal filtering (DJF, MAM, JJA, SON)
+Combining multiple conditions with &, |, ~
+
+3. Axis Operations (keepdims)
+Spatial means across lat/lon
+Time means, anomalies, climatologies
+Percentiles along any axis
+Cumulative sums (e.g., growing degree days)
+
+4. Indexing & Slicing
+Selecting specific time steps
+Extracting regions (e.g., Pacific Ocean box)
+Fancy indexing with integer arrays
+Negative indexing for last time steps
+
+5. NaN Handling
+np.nanmean, np.nanstd, np.nanpercentile
+Finding NaN locations with np.isnan()
+Masking invalid data
+np.where() with NaN conditions
+
+TIER 2: Very Important (Use Weekly)
+6. np.where()
+3-argument form: replace values conditionally
+
+2-argument form: find indices of True
+
+Nested where() for multiple thresholds
+
+Combining with np.isnan()
+
+7. np.roll() & Shift Operations
+Computing finite differences (∂T/∂t)
+
+Centered differences for gradients
+
+Lag correlations (ENSO teleconnections)
+
+Creating time-lagged fields
+
+8. Reshaping & Transpose
+reshape() for seasonal cycles (daily → monthly)
+
+transpose() for dimension reordering
+
+ravel() vs flatten()
+
+newaxis for dimension expansion
+
+9. Statistical Functions
+np.corrcoef() for pattern correlations
+
+np.cov() for covariance matrices
+
+np.percentile() for extremes (95th, 99th)
+
+np.median() for robust central tendency
+
+TIER 3: Advanced but Powerful (Use Monthly)
+10. Linear Algebra (Selected)
+np.linalg.lstsq() for trend fitting
+
+np.linalg.eig() for EOF analysis
+
+np.dot() / @ for matrix multiplication
+
+np.trace() for total variance
+
+11. FFT (Frequency Domain)
+np.fft.rfft() for real climate data
+
+Identifying annual cycle, QBO, ENSO bands
+
+Filtering (low-pass, high-pass)
+
+Power spectral density
+
+12. Advanced Indexing
+np.take() with axis parameter
+
+np.compress() for conditional extraction
+
+np.choose() for multi-case selection
+
+np.select() for multiple conditions
+
+13. Random (for Uncertainty)
+np.random.seed() for reproducibility
+
+np.random.normal() for observation errors
+
+np.random.choice() for bootstrap sampling
+
+np.random.permutation() for Monte Carlo
+
+TIER 4: Specific Use Cases (Know They Exist)
+14. Polynomial Fitting
+np.polyfit() for trend lines
+
+np.polyval() for evaluation
+
+Detrending climate data
+
+15. Interpolation
+np.interp() for 1D time series
+
+Regridding to common coordinates
+
+16. Unique & Binning
+np.unique() for categorical data (seasons, ENSO phases)
+
+np.digitize() for histogram bins
+
+np.bincount() for weighted counts
+
+Complete Checklist (55 Concepts Total)
+#	Concept	Mastery Level Required
+1	Broadcasting rules	10/10
+2	Boolean masking with &, |, ~	10/10
+3	np.mean, np.std with axis	10/10
+4	Basic slicing [start:stop:step]	10/10
+5	np.nan functions	10/10
+6	np.where (both forms)	9/10
+7	np.roll	9/10
+8	reshape vs transpose	9/10
+9	np.corrcoef	9/10
+10	np.percentile	9/10
+11	Fancy indexing with arrays	8/10
+12	keepdims parameter	8/10
+13	np.newaxis	8/10
+14	np.isnan	8/10
+15	np.linalg.lstsq	7/10
+16	np.fft.rfft	7/10
+17	np.random functions	7/10
+18	np.polyfit	6/10
+19	np.interp	6/10
+20	np.unique	6/10
+
+Your Practice Plan
+
+Week 1-2: TIER 1 (Foundation)
+20 basic questions + 10 advanced on broadcasting
+
+20 basic + 10 advanced on masking
+
+20 basic + 10 advanced on axis ops
+
+Week 3-4: TIER 2 (Application)
+10 questions each on where, roll, reshape, stats
+
+Week 5: TIER 3 (Power User)
+5 questions each on linalg, fft, random
+
+Week 6+: Real Project
+Apply all to ERA5 or CMIP6 data
+
